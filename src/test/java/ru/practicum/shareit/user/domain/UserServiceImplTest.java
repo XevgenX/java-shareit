@@ -14,7 +14,6 @@ import ru.practicum.shareit.user.domain.model.User;
 import ru.practicum.shareit.user.domain.repo.UserRepo;
 
 import java.util.Optional;
-import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;

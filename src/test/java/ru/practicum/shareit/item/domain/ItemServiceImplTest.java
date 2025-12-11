@@ -14,7 +14,6 @@ import ru.practicum.shareit.user.domain.model.User;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.NoSuchElementException;
 import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.*;
