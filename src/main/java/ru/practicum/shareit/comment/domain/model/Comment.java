@@ -1,9 +1,11 @@
-package ru.practicum.shareit.request.model;
+package ru.practicum.shareit.comment.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.practicum.shareit.common.domain.model.Model;
+import ru.practicum.shareit.item.domain.model.Item;
 import ru.practicum.shareit.user.domain.model.User;
 
 import java.time.LocalDateTime;
@@ -12,9 +14,10 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ItemRequest {
+public class Comment extends Model {
     private Long id;
-    private String description;
-    private User requester;
+    private String text;
+    private Item item;
+    private User author;
     private LocalDateTime created;
 }
