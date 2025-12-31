@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import ru.practicum.shareit.item.api.dto.ItemDto;
 import ru.practicum.shareit.item.domain.model.Item;
-import ru.practicum.shareit.request.model.ItemRequest;
+import ru.practicum.shareit.request.domain.model.ItemRequest;
 import ru.practicum.shareit.user.domain.model.User;
 
 import java.util.List;
@@ -17,11 +17,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class ItemMapperTest {
 
-    private ItemMapper itemMapper;
+    private ItemApiMapper itemMapper;
 
     @BeforeEach
     void setUp() {
-        itemMapper = new ItemMapper();
+        itemMapper = new ItemApiMapper();
     }
 
     @Test
