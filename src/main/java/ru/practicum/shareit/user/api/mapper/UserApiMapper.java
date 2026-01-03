@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class UserMapper {
+public class UserApiMapper {
     public User toModel(UserDto userDto) {
         if (userDto == null) {
             return null;

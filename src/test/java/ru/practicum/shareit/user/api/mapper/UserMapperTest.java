@@ -15,11 +15,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class UserMapperTest {
 
-    private UserMapper userMapper;
+    private UserApiMapper userMapper;
 
     @BeforeEach
     void setUp() {
-        userMapper = new UserMapper();
+        userMapper = new UserApiMapper();
     }
 
     @Test

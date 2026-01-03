@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.shareit.user.api.dto.UserDto;
-import ru.practicum.shareit.user.api.mapper.UserMapper;
+import ru.practicum.shareit.user.api.mapper.UserApiMapper;
 import ru.practicum.shareit.user.domain.UserService;
 import ru.practicum.shareit.user.domain.model.User;
 
@@ -16,7 +16,7 @@ import java.net.URI;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService service;
-    private final UserMapper mapper;
+    private final UserApiMapper mapper;
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDto> findById(@PathVariable long id) {

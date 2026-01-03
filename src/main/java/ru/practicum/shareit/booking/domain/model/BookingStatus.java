@@ -1,4 +1,4 @@
-package ru.practicum.shareit.booking.model;
+package ru.practicum.shareit.booking.domain.model;
 
 public enum BookingStatus {
     WAITING,    // новое бронирование, ожидает одобрения
