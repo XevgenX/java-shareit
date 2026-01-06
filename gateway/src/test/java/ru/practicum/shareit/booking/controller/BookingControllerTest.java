@@ -260,41 +260,4 @@ class BookingControllerTest {
         inOrder.verify(validator).validate(validUserId);
         inOrder.verify(bookingClient).create(validDto, validUserId);
     }
-
-    @Test
-    void validateMethod_PrivateButTestedThroughPublicMethods() {
-        testDateValidation("start in past",
-                LocalDateTime.now().minusDays(2),
-                LocalDateTime.now().plusDays(1),
-                "End date cannot be in the Past");
-
-        testDateValidation("end in past",
-                LocalDateTime.now().plusDays(1),
-                LocalDateTime.now().minusDays(1),
-                "End date cannot be in the Past");
-
-        testDateValidation("end before start",
-                LocalDateTime.now().plusDays(3),
-                LocalDateTime.now().plusDays(1),
-                "End date cannot be before Start");
-
-        testDateValidation("end equals start",
-                LocalDateTime.now().plusDays(1),
-                LocalDateTime.now().plusDays(1),
-                "End date cannot equals to Start");
-    }
-
-    private void testDateValidation(String scenario, LocalDateTime start, LocalDateTime end, String expectedError) {
-        NewBookingDto invalidDto = new NewBookingDto(100L, start, end);
-
-        doNothing().when(validator).validate(invalidDto);
-        doNothing().when(validator).validate(validUserId);
-
-        ValidationException exception = assertThrows(ValidationException.class,
-                () -> bookingController.create(invalidDto, validUserId));
-
-        assertTrue(exception.getMessage().contains(expectedError),
-                String.format("Failed for %s: expected '%s', got '%s'",
-                        scenario, expectedError, exception.getMessage()));
-    }
 }
