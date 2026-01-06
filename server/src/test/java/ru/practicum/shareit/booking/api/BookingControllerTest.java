@@ -34,7 +34,7 @@ import org.springframework.transaction.annotation.Transactional;
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
 @Transactional
-class BookingControllerIntegrationTest {
+class BookingControllerTest {
 
     @Autowired
     private MockMvc mockMvc;

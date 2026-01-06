@@ -34,15 +34,13 @@ class ItemDtoJsonTest {
 
     @Test
     void deserializeItemDto() throws Exception {
-        String json = """
-            {
-                "id": 1,
-                "name": "Drill",
-                "description": "Power drill",
-                "available": true,
-                "requestId": 10
-            }
-            """;
+        String json = "            {\n" +
+                "                \"id\": 1,\n" +
+                "                \"name\": \"Drill\",\n" +
+                "                \"description\": \"Power drill\",\n" +
+                "                \"available\": true,\n" +
+                "                \"requestId\": 10\n" +
+                "            }";
 
         ItemDto itemDto = objectMapper.readValue(json, ItemDto.class);
 
@@ -55,13 +53,11 @@ class ItemDtoJsonTest {
 
     @Test
     void deserializeItemDto_WithMissingOptionalFields() throws Exception {
-        String json = """
-            {
-                "name": "Hammer",
-                "description": "Heavy hammer",
-                "available": false
-            }
-            """;
+        String json = "            {\n" +
+                "                \"name\": \"Hammer\",\n" +
+                "                \"description\": \"Heavy hammer\",\n" +
+                "                \"available\": false\n" +
+                "            }";
 
         ItemDto itemDto = objectMapper.readValue(json, ItemDto.class);
 

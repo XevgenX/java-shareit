@@ -30,13 +30,11 @@ class UserDtoJsonTest {
 
     @Test
     void deserializeUserDto() throws Exception {
-        String json = """
-            {
-                "id": 1,
-                "name": "John Doe",
-                "email": "john@example.com"
-            }
-            """;
+        String json = "{\n" +
+                "                \"id\": 1,\n" +
+                "                \"name\": \"John Doe\",\n" +
+                "                \"email\": \"john@example.com\"\n" +
+                "            }";
 
         UserDto userDto = objectMapper.readValue(json, UserDto.class);
 
@@ -47,12 +45,10 @@ class UserDtoJsonTest {
 
     @Test
     void deserializeUserDto_WithoutId() throws Exception {
-        String json = """
-            {
-                "name": "John Doe",
-                "email": "john@example.com"
-            }
-            """;
+        String json = "{\n" +
+                "                \"name\": \"John Doe\",\n" +
+                "                \"email\": \"john@example.com\"\n" +
+                "            }";
 
         UserDto userDto = objectMapper.readValue(json, UserDto.class);
 

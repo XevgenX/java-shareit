@@ -32,13 +32,11 @@ class NewBookingDtoJsonTest {
 
     @Test
     void deserializeNewBookingDto() throws Exception {
-        String json = """
-            {
-                "itemId": 1,
-                "start": "2024-01-15T10:00:00",
-                "end": "2024-01-17T18:00:00"
-            }
-            """;
+        String json = "{\n" +
+                "                \"itemId\": 1,\n" +
+                "                \"start\": \"2024-01-15T10:00:00\",\n" +
+                "                \"end\": \"2024-01-17T18:00:00\"\n" +
+                "            }";
 
         NewBookingDto dto = objectMapper.readValue(json, NewBookingDto.class);
 
@@ -49,13 +47,11 @@ class NewBookingDtoJsonTest {
 
     @Test
     void deserializeNewBookingDto_InvalidDateFormats() throws Exception {
-        String invalidJson = """
-            {
-                "itemId": 1,
-                "start": "invalid-date",
-                "end": "2024-01-17T18:00:00"
-            }
-            """;
+        String invalidJson = "{\n" +
+                "                \"itemId\": 1,\n" +
+                "                \"start\": \"invalid-date\",\n" +
+                "                \"end\": \"2024-01-17T18:00:00\"\n" +
+                "            }";
 
         assertThatThrownBy(() -> objectMapper.readValue(invalidJson, NewBookingDto.class))
                 .isInstanceOf(com.fasterxml.jackson.databind.exc.InvalidFormatException.class);

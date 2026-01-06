@@ -24,11 +24,9 @@ class NewRequestDtoJsonTest {
 
     @Test
     void deserializeRecordDto() throws Exception {
-        String json = """
-            {
-                "description": "Looking for a circular saw"
-            }
-            """;
+        String json = "{\n" +
+                "                \"description\": \"Looking for a circular saw\"\n" +
+                "            }";
 
         NewRequestDto dto = objectMapper.readValue(json, NewRequestDto.class);
 

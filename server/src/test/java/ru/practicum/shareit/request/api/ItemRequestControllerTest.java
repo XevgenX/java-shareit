@@ -1,6 +1,5 @@
 package ru.practicum.shareit.request.api;
 
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,14 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import ru.practicum.shareit.booking.domain.BookingService;
-import ru.practicum.shareit.booking.domain.model.Booking;
-import ru.practicum.shareit.booking.domain.model.BookingStatus;
-import ru.practicum.shareit.booking.persistence.repo.BookingRepository;
-import ru.practicum.shareit.comment.api.dto.NewCommentDto;
-import ru.practicum.shareit.comment.domain.CommentService;
-import ru.practicum.shareit.comment.persistence.repo.CommentRepository;
-import ru.practicum.shareit.item.api.dto.ItemDto;
 import ru.practicum.shareit.item.domain.ItemService;
 import ru.practicum.shareit.item.domain.model.Item;
 import ru.practicum.shareit.item.persistence.repo.ItemRepository;
