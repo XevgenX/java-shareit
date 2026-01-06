@@ -24,11 +24,9 @@ class NewCommentDtoJsonTest {
 
     @Test
     void deserializeNewCommentDto() throws Exception {
-        String json = """
-            {
-                "text": "Excellent quality!"
-            }
-            """;
+        String json = "{\n" +
+                "                \"text\": \"Excellent quality!\"\n" +
+                "            }";
 
         NewCommentDto dto = objectMapper.readValue(json, NewCommentDto.class);
 
@@ -37,11 +35,9 @@ class NewCommentDtoJsonTest {
 
     @Test
     void deserializeNewCommentDto_EmptyText() throws Exception {
-        String json = """
-            {
-                "text": ""
-            }
-            """;
+        String json = "{\n" +
+                "                \"text\": \"\"\n" +
+                "            }";
 
         NewCommentDto dto = objectMapper.readValue(json, NewCommentDto.class);
 
