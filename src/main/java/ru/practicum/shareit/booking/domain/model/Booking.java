@@ -1,9 +1,10 @@
-package ru.practicum.shareit.booking.model;
+package ru.practicum.shareit.booking.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.practicum.shareit.common.domain.model.Model;
 import ru.practicum.shareit.item.domain.model.Item;
 import ru.practicum.shareit.user.domain.model.User;
 
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Booking {
+public class Booking extends Model {
     private Long id;
     private LocalDateTime start;
     private LocalDateTime end;
@@ -22,5 +23,8 @@ public class Booking {
 
     @Builder.Default
     private BookingStatus status = BookingStatus.WAITING;
+
+    @Builder.Default
+    private LocalDateTime created = LocalDateTime.now();
 }
 
